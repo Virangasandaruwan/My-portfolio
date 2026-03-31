@@ -115,13 +115,14 @@ nav a:hover::after {
 }
 
 /* Hero Section */
-main#hero {
+#hero {
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0 5%;
     position: relative;
+    margin-top: 5rem;
 }
 
 .content {
@@ -341,6 +342,13 @@ section {
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
+}
+
+/*  image sizing  */
+.img{
+   width: 100%;
+    height: 200px;
+    object-fit: cover ;
 }
 
 /* Main topics */
