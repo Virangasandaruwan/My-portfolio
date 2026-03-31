@@ -4,237 +4,254 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Viranga Sandaruwan | Portfolio</title>
-    <style>
-        :root {
-            --black: #000000;
-            --red: #ff0000;
-            --gray: #888888;
-            --white: #ffffff;
-            --dark-gray: #1a1a1a;
-            --glow-red: rgba(255, 0, 0, 0.6);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background: var(--black);
-            color: var(--white);
-            font-family: 'Segoe UI', system-ui, sans-serif;
-            min-height: 100vh;
-            overflow-x: hidden;
-            position: relative;
-        }
-
-        /* Animated subtle red glow background */
-        body::before {
-            content: "";
-            position: fixed;
-            inset: 0;
-            background: radial-gradient(circle at 20% 20%, rgba(255,0,0,0.08) 0%, transparent 50%);
-            pointer-events: none;
-            z-index: -2;
-        }
-
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 1.5rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 100;
-            background: rgba(0,0,0,0.6);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255,0,0,0.1);
-        }
-
-        .logo {
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: var(--red);
-            letter-spacing: 2px;
-        }
-
-        nav {
-            display: flex;
-            gap: 2.5rem;
-        }
-
-        nav a {
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        nav a:hover {
-            color: var(--red);
-            transform: translateY(-2px);
-        }
-
-        .btn-contact {
-            background: var(--red);
-            color: white;
-            padding: 0.8rem 2rem;
-            border-radius: 50px;
-            border: none;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.4s ease;
-        }
-
-        .btn-contact:hover {
-            background: transparent;
-            border: 2px solid var(--red);
-            color: var(--red);
-            transform: scale(1.05);
-        }
-
-        main {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0 5%;
-            position: relative;
-        }
-
-        .content {
-            text-align: center;
-            z-index: 10;
-            max-width: 90%;
-        }
-
-        .welcome-universe {
-            font-size: clamp(4rem, 12vw, 12rem);
-            font-weight: 900;
-            background: linear-gradient(90deg, var(--red), #ff4d4d, #ff0000, #cc0000);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            background-size: 300%;
-            animation: textRedGlow 6s ease infinite;
-            line-height: 0.95;
-            text-shadow: 0 0 40px rgba(255,0,0,0.5);
-            margin-bottom: 1.5rem;
-        }
-
-        @keyframes textRedGlow {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 300% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .description {
-            font-size: 1.4rem;
-            max-width: 700px;
-            margin: 0 auto 2.5rem;
-            color: var(--gray);
-            line-height: 1.7;
-        }
-
-        .buttons {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.4s ease;
-            font-size: 1.1rem;
-        }
-
-        .btn-primary {
-            background: var(--red);
-            color: white;
-            box-shadow: 0 0 20px var(--glow-red);
-        }
-
-        .btn-primary:hover {
-            background: transparent;
-            border: 2px solid var(--red);
-            color: var(--red);
-            transform: translateY(-5px);
-            box-shadow: 0 0 40px var(--glow-red);
-        }
-
-        .btn-outline {
-            border: 2px solid var(--gray);
-            color: var(--gray);
-        }
-
-        .btn-outline:hover {
-            border-color: var(--red);
-            color: var(--red);
-            transform: translateY(-5px);
-        }
-
-        /* Robot - background transparent කරලා text එක පිටුපසට */
-        spline-viewer {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;           /* text එකට පිටුපසට යන්න z-index අඩු කළා */
-            pointer-events: none;
-        }
-
-        .content {
-            position: relative;
-            z-index: 5;           /* text එක robot එකට ඉස්සරහට එනවා */
-        }
-
-        /* Mobile responsive */
-        @media (max-width: 900px) {
-            .welcome-universe { font-size: clamp(3.5rem, 15vw, 7rem); }
-            .buttons { flex-direction: column; gap: 1rem; }
-            nav { gap: 1.5rem; flex-wrap: wrap; justify-content: center; }
-        }
-    </style>
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
+
 <body>
-    <header>
-        <h1 class="logo">Viranga</h1>
-        <nav>
-            <a href="#">About</a>
-            <a href="#">Experience</a>
-            <a href="#">Skills</a>
-            <a href="#">Projects</a>
-        </nav>
+<header>
+    <a href="#hero"> <h1 class="logo">Viranga</h1></a>
+    <nav>
+        <a href="#About">About</a>
+        <a href="#Experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#Projects">Projects</a>
+        <a href="#Gallery">Gallery</a>
+    </nav>
+    <a href="contact.html">
         <button class="btn-contact">Contact</button>
-    </header>
+    </a>
+</header>
 
-    <main>
-        <div class="content">
-            <h1 class="welcome-universe">WELCOME TO MY UNIVERSE</h1>
-            <p class="description">
-                I'm <b>Viranga Sandaruwan</b>, a passionate student<br>
-                crafting high-performance, user-centric digital experiences.
-            </p>
-            <div class="buttons">
-                <a href="#" class="btn btn-primary">GET RESUME →</a>
-                <a href="#" class="btn btn-outline">LET'S COLLABORATE →</a>
-            </div>
+<!-- Hero Section -->
+<main id="hero">
+    <div class="content">
+        <h1 class="welcome-universe">WELCOME TO MY UNIVERSE</h1>
+        <p class="description">
+            I'm <b>Viranga Sandaruwan</b>, a passionate student<br>
+            crafting high-performance, user-centric digital experiences.
+        </p>
+        <div class="buttons">
+            <a href="Viranga_Resume.pdf" class="btn btn-primary" download>GET RESUME →</a>
+            <a href="#contact" class="btn btn-outline">LET'S COLLABORATE →</a>
         </div>
-
-        <!-- Robot - background transparent, text එකට පිටුපසට -->
-        <spline-viewer 
+    </div>
+    <spline-viewer
             url="https://prod.spline.design/ugBEkJJe34wTifaW/scene.splinecode"
             class="robot-3d">
-        </spline-viewer>
-    </main>
+    </spline-viewer>
+</main>
 
-    <!-- Spline Viewer Script -->
-    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.2/build/spline-viewer.js"></script>
+<!-- About Section -->
+<section id="About">
+    <main class="container">
+        <div class="about-content">
+            <h1 class="section-title">I'M VIRANGA SANDARUWAN</h1>
+            <p class="about-text">
+                Passionate Computer Science student with strong foundation in programming fundamentals,
+                data structures, algorithms, and software engineering principles. Currently mastering
+                full-stack development with Java, Spring Boot, React, and modern web technologies.
+                Eager to apply theoretical knowledge to real-world projects and contribute to innovative
+                software solutions.
+            </p>
+            <div class="buttons">
+                <a href="About.html" class="btn btn-primary">More About Me</a>
+            </div>
+        </div>
+    </main>
+</section>
+
+<!-- Skills Section -->
+<section id="skills">
+    <main class="container">
+        <h2 class="section-title">SKILLS & TECHNOLOGIES</h2>
+        <div class="skills-grid">
+
+            <div class="skill-card" data-skill="Java">
+                <i class="fab fa-java"></i>
+                <span>Java</span>
+            </div>
+            <div class="skill-card" data-skill="JavaFX">
+                <i class="fas fa-desktop"></i>
+                <span>JavaFX</span>
+            </div>
+            <div class="skill-card" data-skill="HTML/CSS">
+                <i class="fab fa-html5"></i>
+                <span>HTML/CSS</span>
+            </div>
+            <div class="skill-card" data-skill="JavaScript">
+                <i class="fab fa-js-square"></i>
+                <span>JavaScript</span>
+            </div>
+            <div class="skill-card" data-skill="React">
+                <i class="fab fa-react"></i>
+                <span>React</span>
+            </div>
+            <div class="skill-card" data-skill="Spring Boot">
+                <i class="fas fa-leaf"></i>
+                <span>Spring Boot</span>
+            </div>
+            <div class="skill-card" data-skill="MySQL">
+                <i class="fas fa-database"></i>
+                <span>MySQL</span>
+            </div>
+            <div class="skill-card" data-skill="UI/UX">
+                <i class="fas fa-paint-brush"></i>
+                <span>UI/UX Design</span>
+            </div>
+            <div class="skill-card" data-skill="Git">
+                <i class="fab fa-git-alt"></i>
+                <span>Git</span>
+            </div>
+            <div class="skill-card" data-skill="Algorithms">
+                <i class="fas fa-brain"></i>
+                <span>Algorithms</span>
+            </div>
+        </div>
+    </main>
+</section>
+
+<!-- Experience Section -->
+<section id="Experience">
+    <main class="container">
+        <h2 class="section-title">EXPERIENCE</h2>
+        <div class="timeline">
+
+            <div class="timeline-item">
+                <h3>Computer Science Student</h3>
+                <span class="timeline-date">2022 - Present</span>
+                <p>Studying core CS fundamentals including Data Structures, Algorithms, OOP, Database Systems, and Software Engineering.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>Freelance Developer</h3>
+                <span class="timeline-date">2023 - Present</span>
+                <p>Building web applications and desktop applications for local businesses and personal projects.</p>
+            </div>
+
+        </div>
+    </main>
+</section>
+
+<!-- Projects Section -->
+<section id="Projects">
+    <main class="container">
+        <h2 class="section-title">PROJECTS</h2>
+        <div class="projects-grid">
+
+            <!-- Project 1 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src=":assets/images/connect_4.png" alt="Connect four Game">
+                </div>
+                <div class="project-content">
+                    <h3>Connect four game</h3>
+                    <p>Build the mini game using java</p>
+                    <div class="project-actions">
+                        <a href="#" class="btn btn-primary btn-small" data-modal="project1">Preview</a>
+                        <a href="#" class="btn btn-outline btn-small" data-modal="project1-details">More Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src=":assets/images/posSystem" alt="POS-system">
+                </div>
+                <div class="project-content">
+                    <h3>E-Commerce Platform</h3>
+                    <p>Complete online shopping system with payment integration and admin dashboard.</p>
+                    <div class="project-actions">
+                        <a href="#" class="btn btn-primary btn-small" data-modal="project2">Preview</a>
+                        <a href="#" class="btn btn-outline btn-small" data-modal="project2-details">More Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="" alt="Portfolio">
+                </div>
+                <div class="project-content">
+                    <h3>Autonomous Line Following Robot</h3>
+                    <p>High-speed autonomous robot with an IR sensor array and custom PID control for precise path navigation.</p>
+                    <div class="project-actions">
+                        <a href="#" class="btn btn-primary btn-small" data-modal="project3">Preview</a>
+                        <a href="#" class="btn btn-outline btn-small" data-modal="project3-details">More Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</section>
+
+<!-- Gallery Section -->
+<section id="Gallery">
+    <main class="container">
+        <h2 class="section-title">GALLERY</h2>
+        <div class="gallery-grid">
+
+            <div class="gallery-item">
+                <img src="" alt="my_image">
+            </div>
+
+            <div class="gallery-item">
+                <img src="" alt="my_image">
+            </div>
+
+            <div class="gallery-item">
+                <img src="" alt="my_image">
+            </div>
+
+            <div class="gallery-item">
+                <img src="" alt="my_image">
+            </div>
+
+            <div class="gallery-item">
+                <img src="" alt=" my_image">
+            </div>
+
+            <div class="gallery-item">
+                <img src="" alt="my_image">
+            </div>
+
+            <div class="gallery-item">
+                <img src="" alt=" my_image">
+            </div>
+
+            <div class="gallery-item">
+                <img src="" alt="my_image">
+            </div>
+
+        </div>
+    </main>
+</section>
+
+<!-- Footer -->
+<section>
+    <footer>
+
+    </footer>
+</section>
+
+<!-- Project Preview Modal -->
+<div id="projectModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <iframe id="projectPreview" src="" width="100%" height="500px"></iframe>
+    </div>
+</div>
+
+<!-- Project Details Modal -->
+<div id="projectDetailsModal" class="modal">
+    <div class="modal-content details-modal">
+        <span class="close">&times;</span>
+        <div id="projectDetailsContent"></div>
+    </div>
+</div>
+
+<!--<script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.2/build/spline-viewer.js"></script>-->
+<script src="script.js"></script>
 </body>
 </html>
