@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="indexJs" href="indexJs.js">
     <title>Document</title>
 </head> 
  <body>
@@ -16,20 +17,15 @@
             <a href="index.html">
                 <h1 class="logo"><b>Viranga</b></h1>
             </a>
-
-
             <nav>
                 <a href="#">About</a>
                 <a href="#">Experience</a>
                 <a href="#">Skils</a>
                 <a href="#">Projects</a>
             </nav>
-
             <button class="btn-contact">Contact</button>
         </header>
 
-
-        <br><br><br>
 
         <!-- issellama pena kalla -->
         <main>
@@ -69,12 +65,17 @@
         
 
     </div>
-
-     <spline-viewer class="robot-3d" url="https://prod.spline.design/ugBEkJJe34wTifaW
-        /scene.splinecode"></spline-viewer>
-   
-<script type="module" src="https://unpkg.com/@splinetool/viewer@1.
-12.67/build/spline-viewer.js"></script>
+    <!--    robot -->
+    <div class="robot-container">
+        <div class="robot">
+            <img src="assets/image/head.png" class="part head" id="head">
+            <img src="assets/image/torso.png" class="part torso" id="torso">
+            <img src="assets/image/arm-l.png" class="part arm left" id="armL">
+            <img src="assets/image/arm-r.png" class="part arm right" id="armR">
+            <img src="assets/image/leg-l.png" class="part leg left" id="legL">
+            <img src="assets/image/leg-r.png" class="part leg right" id="legR">
+        </div>
+    </div>
 
     
 </body>
