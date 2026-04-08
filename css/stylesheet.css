@@ -55,7 +55,7 @@ section {
     background: var(--bg-dark);
 }
 
-/* Typography */
+/* title */
 .section-title {
     font-size: clamp(2.5rem, 5vw, 3.5rem);
     text-align: center;
@@ -234,6 +234,7 @@ h2:hover::after {
     box-shadow: 0 20px 40px var(--glow-red);
     background: rgba(255, 0, 0, 0.05);
 }
+
 
 /* Grid Layouts */
 .skills-grid, .gallery-grid {

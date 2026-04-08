@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Case 01</title>
+    <meta name="keywords" content="web, html, css, javascript, js, java, python">
+    <meta name="description" content="World best web development tutorials">
+    <meta name="author" content="IJSE">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/normalize.css">
+    <link rel="stylesheet" href="https://www.hxstrive.com/cdn/libs/font-awesome/7.0.1/css/all.min.css">
+
+    <style>
+
+        body{
+            margin-top: 60px;
+            margin-left: 0;
+        }
+        .nav{
+            display: flex;
+            gap: 30px;
+            flex-direction: column;
+        }
+        .main{
+            background: blueviolet;
+            width:  60px;
+            height: 50px;
+            display: flex;
+            border-radius: 0 5px 5px 0;
+            justify-content: space-between;
+            align-items: center;
+            overflow: hidden;
+            transition-duration: 3000ms;
+            position: relative;
+
+
+        }
+
+        .main:hover{
+            width: 250px;
+
+        }
+
+        .main .text {
+            color: white;
+            padding-left: 20px;
+            font-weight: 600;
+            white-space: nowrap;
+            opacity: 0;
+            z-index: 10;
+            display: flex;
+            animation-duration: 10000ms;
+            animation-timing-function: ease-in-out;
+
+
+
+        }
+
+
+
+        .main:hover .text {
+            opacity: 1;
+
+        }
+        .main .img{
+            min-width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            position: absolute;
+            right: 10px;
+
+        }
+
+
+
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="nav">
+    <div class="main">
+        <span class="text">Menu One</span>
+        <div class="img">
+            <i class="fa-regular fa-address-book" style="color: rgb(255, 255, 255);"></i>
+        </div>
+    </div>
+
+    <div class="main">
+        <span class="text">Menu Two</span>
+        <div class="img">
+            <i class="fa-solid fa-truck" style="color: rgb(255, 255, 255);"></i>
+        </div>
+    </div>
+
+    <div class="main">
+        <span class="text">Menu Three</span>
+        <div class="img">
+            <i class="fa-solid fa-book" style="color: rgb(255, 255, 255);"></i>
+        </div>
+    </div>
+
+    <div class="main">
+        <span class="text">Menu Four</span>
+        <div class="img">
+            <i class="fa-solid fa-layer-group" style="color: rgb(255, 253, 248);"></i>
+        </div>
+    </div>
+
+    <div class="main">
+        <span class="text">Menu five</span>
+        <div class="img">
+            <i class="fa-solid fa-cart-shopping" style="color: rgb(255, 255, 255);"></i>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
