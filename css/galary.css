@@ -1,4 +1,4 @@
-/* GALLERY - PERFECT & SIMPLE */
+/* Galary */
 .gallery-main {
     display: flex;
     flex-wrap: wrap;
@@ -29,13 +29,12 @@
     transition: transform 0.3s ease;
 }
 
-/* EMPTY IMAGE MAGIC */
+
 .gallery-item img[src=""] {
     opacity: 0;
     visibility: hidden;
 }
 
-/* SHINE EFFECT */
 .gallery-item::before {
     content: '';
     position: absolute;
@@ -44,21 +43,8 @@
     animation: shine 2.5s infinite;
 }
 
-/* COMING SOON TEXT */
-.gallery-item::after {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #ff4444;
-    font-weight: 700;
-    font-size: clamp(11px, 2.5vw, 14px);
-    text-shadow: 0 0 8px rgba(255,0,0,0.6);
-    animation: pulse 1.8s infinite;
-    z-index: 2;
-}
 
-/* ANIMATIONS */
+
 @keyframes shine {
     0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
     100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
@@ -69,7 +55,6 @@
     50% { opacity: 1; transform: translate(-50%, -50%) scale(1.08); }
 }
 
-/* HOVER EFFECTS */
 .gallery-item:hover {
     transform: translateY(-8px);
     border-color: #ff0000;
@@ -85,7 +70,7 @@
     opacity: 0;
 }
 
-/* RESPONSIVE */
+/* responsive */
 @media (max-width: 768px) {
     .gallery-item {
         width: calc(50% - 0.6rem);

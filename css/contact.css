@@ -1,4 +1,4 @@
-/* Contact Section Styles */
+/* Contact Section */
 .contact-section {
     min-height: 100vh;
     display: flex;
@@ -60,7 +60,7 @@
     font-weight: 600;
 }
 
-/* Form Styles */
+/* Form */
 .contact-form {
     display: flex;
     flex-direction: column;
