@@ -9,12 +9,12 @@
     --bg-dark: #111111;
     --bg-darker: #0f0f0f;
 
-    /*--glow-red: rgba(255, 0, 0, 0.6);*/
-    /*--border-red: rgba(255, 0, 0, 0.15);*/
-    /*--border-red-hover: rgba(255, 0, 0, 0.5);*/
-    --primary-glow: rgba(255, 0, 0, 0.6);
-    --primary-border: rgba(255, 0, 0, 0.15);
-    --primary-border-hover: rgba(255, 0, 0, 0.5);
+    --glow-red: rgba(255, 0, 0, 0.6);
+    --border-red: rgba(255, 0, 0, 0.15);
+    --border-red-hover: rgba(255, 0, 0, 0.5);
+    /*--primary-glow: rgba(255, 0, 0, 0.6);*/
+    /*--primary-border: rgba(255, 0, 0, 0.15);*/
+    /*--primary-border-hover: rgba(255, 0, 0, 0.5);*/
 
     --glass-bg: rgba(255, 255, 255, 0.05);
     --transition-fast: 0.3s ease;
