@@ -365,7 +365,26 @@
 <!--<script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.2/build/spline-viewer.js"></script>-->
 <!--<script src="script.js"></script>-->
 
+<script>
+    function changeThemeColor(color) {
+        const root = document.documentElement;
 
+        root.style.setProperty('--primary', color);
+
+        root.style.setProperty('--primary-glow', color + '99');
+        root.style.setProperty('--primary-border', color + '26');
+        root.style.setProperty('--primary-border-hover', color + '80');
+
+        localStorage.setItem('selected-theme', color);
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+        const savedColor = localStorage.getItem('selected-theme');
+        if (savedColor) {
+            changeThemeColor(savedColor);
+        }
+    });
+</script>
 
 </body>
 </html>
