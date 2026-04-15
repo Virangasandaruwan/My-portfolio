@@ -65,7 +65,7 @@ section {
     font-size: clamp(2.5rem, 5vw, 3.5rem);
     text-align: center;
     margin-bottom: 4rem;
-    background: linear-gradient(90deg, var(--red), #ff4d4d);
+    background: linear-gradient(90deg, var(--primary), #ff4d4d);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -78,7 +78,7 @@ h2 {
 }
 
 h2:hover {
-    color: var(--red);
+    color: var(--primary);
     transform: translateY(-2px);
 }
 
@@ -89,7 +89,7 @@ h2::after {
     height: 2px;
     bottom: -5px;
     left: 0;
-    background: var(--red);
+    background: var(--primary);
     transition: width var(--transition-fast);
 }
 
@@ -117,7 +117,7 @@ h2:hover::after {
 .welcome-universe {
     font-size: clamp(4rem, 12vw, 12rem);
     font-weight: 900;
-    background: linear-gradient(90deg, var(--red), #ff4d4d, #ff0000, #cc0000);
+    background: linear-gradient(90deg, var(--primary), #ff4d4d, #ff0000, #cc0000);
     background-size: 300%;
     -webkit-background-clip: text;
     background-clip: text;
@@ -162,15 +162,15 @@ h2:hover::after {
 }
 
 .btn-primary {
-    background: var(--red);
+    background: var(--primary);
     color: white;
     box-shadow: 0 0 20px var(--glow-red);
 }
 
 .btn-primary:hover {
     background: transparent;
-    border: 2px solid var(--red);
-    color: var(--red);
+    border: 2px solid var(--primary);
+    color: var(--primary);
     transform: translateY(-5px);
     box-shadow: 0 0 40px var(--glow-red);
 }
@@ -182,8 +182,8 @@ h2:hover::after {
 }
 
 .btn-outline:hover {
-    border-color: var(--red);
-    color: var(--red);
+    border-color: var(--primary);
+    color: var(--primary);
     transform: translateY(-5px);
 }
 
@@ -225,7 +225,7 @@ h2:hover::after {
 
 .skill-card i {
     font-size: 2.5rem;
-    color: var(--red);
+    color: var(--primary);
 }
 
 .skill-card span, .gallery-item span {
@@ -234,7 +234,7 @@ h2:hover::after {
 }
 
 .skill-card:hover, .gallery-item:hover {
-    border-color: var(--red);
+    border-color: var(--primary);
     transform: translateY(-10px) scale(1.05);
     box-shadow: 0 20px 40px var(--glow-red);
     background: rgba(255, 0, 0, 0.05);
@@ -351,7 +351,7 @@ h2:hover::after {
     top: 0;
     width: 4px;
     height: 100%;
-    background: var(--red);
+    background: var(--primary);
     box-shadow: 0 0 10px var(--glow-red);
     border-radius: 2px;
 }
@@ -362,7 +362,7 @@ h2:hover::after {
     padding: 20px 25px;
     background: var(--dark-gray);
     border-radius: 10px;
-    border-left: 3px solid var(--red);
+    border-left: 3px solid var(--primary);
     transition: all var(--transition-fast);
 }
 
@@ -373,7 +373,7 @@ h2:hover::after {
     top: 25px;
     width: 16px;
     height: 16px;
-    background: var(--red);
+    background: var(--primary);
     border-radius: 50%;
     border: 3px solid var(--bg-dark);
     box-shadow: 0 0 10px var(--glow-red);
@@ -386,7 +386,7 @@ h2:hover::after {
 
 .timeline-item h3 {
     font-size: 1.4rem;
-    color: var(--red);
+    color: var(--primary);
     margin-bottom: 8px;
 }
 
@@ -448,7 +448,7 @@ h2:hover::after {
 }
 
 .close:hover {
-    color: var(--red);
+    color: var(--primary);
 }
 
 @keyframes modalPop {
