@@ -365,6 +365,8 @@
 <!--<script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.2/build/spline-viewer.js"></script>-->
 <!--<script src="script.js"></script>-->
 
+
+<!-- js part for color change -->
 <script>
     function changeThemeColor(color) {
         const root = document.documentElement;
@@ -377,7 +379,6 @@
 
         localStorage.setItem('selected-theme', color);
     }
-
     window.addEventListener('DOMContentLoaded', () => {
         const savedColor = localStorage.getItem('selected-theme');
         if (savedColor) {
