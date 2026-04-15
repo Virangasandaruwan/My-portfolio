@@ -456,20 +456,16 @@ h2:hover::after {
     .timeline {
         padding-left: 20px;
     }
-
     .timeline-item {
         padding: 15px;
     }
-
     .timeline-item::before {
         left: -20px;
     }
-
     .buttons {
         flex-direction: column;
         align-items: center;
     }
-
     .btn {
         width: 100%;
         max-width: 300px;
@@ -481,6 +477,34 @@ h2:hover::after {
         padding: 60px 0;
     }
 }
+
+
+
+
+
+
+/* color switch  */
+.theme-switcher {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid white;
+    transition: transform 0.2s;
+}
+.dot:hover { transform: scale(1.2); }
+.red { background: #ff0000; }
+.blue { background: #0066ff; }
+.green { background: #00ff88; }
+.purple { background: #bc13fe; }
+
+
 /*    */
 /*}:root {*/
 /*     --black: #000000;*/
