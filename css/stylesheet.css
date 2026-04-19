@@ -1,5 +1,6 @@
 :root {
-    --black: #000000;
+    /*--black: #000000;*/
+    --black: white;
     --red: #ff0000;
     --primary: #ff0000;
 
@@ -257,6 +258,9 @@ h2:hover::after {
     background: rgba(255, 0, 0, 0.05);
 }
 
+
+
+
 /*====================================================================================================================*/
 /*                                        Grid Layouts                                                                */
 /*====================================================================================================================*/
@@ -365,7 +369,7 @@ h2:hover::after {
 }
 
 .timeline {
-    max-width: 900px;
+    max-width: 700px;
     margin: 0 auto;
     position: relative;
     padding-left: 30px;
@@ -433,7 +437,7 @@ h2:hover::after {
 /*====================================================================================================================*/
 .about-content {
     text-align: center;
-    max-width: 800px;
+    max-width: 700px;
     margin: 0 auto;
 }
 
@@ -522,9 +526,9 @@ h2:hover::after {
 
 
 
-
-
-/* color switch  */
+/*====================================================================================================================*/
+/*                                               color switch                                                         */
+/*====================================================================================================================*/
 .theme-switcher {
     display: flex;
     gap: 10px;
@@ -545,3 +549,179 @@ h2:hover::after {
 .green { background: #00ff88; }
 .purple { background: #bc13fe; }
 
+
+/*====================================================================================================================*/
+/*                                              footer                                                                */
+/*====================================================================================================================*/
+
+.footer {
+    background-color: #0a0a0a;
+    color: #ffffff;
+    padding: 50px 0 20px;
+    margin-top: 80px;
+}
+
+.footer-container {
+    width: 85%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-logo {
+    color: red;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.footer-left p {
+    color: #aaa;
+    max-width: 300px;
+    line-height: 1.6;
+}
+
+.footer-links h3,
+.footer-contact h3 {
+    margin-bottom: 15px;
+    color: red;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 8px;
+}
+
+.footer-links ul li a {
+    text-decoration: none;
+    color: #ccc;
+    transition: 0.3s;
+}
+
+.footer-links ul li a:hover {
+    color: red;
+}
+
+.footer-contact p {
+    color: #ccc;
+    margin-bottom: 8px;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #222;
+    margin-top: 30px;
+    padding-top: 15px;
+    font-size: 14px;
+    color: #777;
+}
+
+
+/*====================================================================================================================*/
+/*                                               Navigation bar                                                       */
+/*====================================================================================================================*/
+
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1.5rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background: rgba(0,0,0,0.9);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,0,0,0.1);
+}
+
+.logo {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--red);
+    letter-spacing: 2px;
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    gap: 2.5rem;
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+nav a:hover {
+    color: var(--red);
+    transform: translateY(-2px);
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background: var(--red);
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+.btn-contact {
+    background: var(--red);
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    text-decoration: none;
+}
+
+.btn-contact:hover {
+    background: transparent;
+    border: 2px solid var(--red);
+    color: var(--red);
+    transform: scale(1.05);
+}
+
+
+/*====================================================================================================================*/
+/*                                               Animation scrolling                                                  */
+/*====================================================================================================================*/
+html {
+    scroll-behavior: smooth;
+}
+
+.full-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 10% 20px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+
+.full-section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
