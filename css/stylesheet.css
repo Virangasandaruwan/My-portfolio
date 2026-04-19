@@ -705,7 +705,17 @@ nav a:hover::after {
     transform: scale(1.05);
 }
 
-
+/* image  cloud */
+.floating-cloud {
+    position: absolute;
+    width: 800px;
+    opacity: 0.6;
+    z-index: 1;
+    pointer-events: none;
+    filter: blur(2px);
+    top: 20%;
+    left: -650px;
+}
 
 @keyframes flyAcross {
     0% {
