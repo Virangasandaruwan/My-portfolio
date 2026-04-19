@@ -345,7 +345,26 @@
 
 
 <!--==========-->
+<script>
+    const cloud = document.querySelector('.floating-cloud');
 
+    function startCloudAnimation() {
+        const randomTop = Math.floor(Math.random() * 60) + 5;
+
+        const randomDuration = Math.floor(Math.random() * 15) + 15;
+
+        cloud.style.top = randomTop + "%";
+        cloud.style.animation = `flyAcross ${randomDuration}s linear forwards`;
+
+        cloud.addEventListener('animationend', () => {
+            cloud.style.animation = 'none';
+
+            const randomDelay = Math.floor(Math.random() * 5000) + 2000;
+            setTimeout(startCloudAnimation, randomDelay);
+        }, { once: true });
+    }
+    startCloudAnimation();
+</script>
 
 </body>
 </html>
