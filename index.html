@@ -340,5 +340,22 @@
 <!--<script src="script.js"></script>-->
 
 
+<!--==========-->
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+            } else {
+
+                entry.target.classList.remove('show');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    const sections = document.querySelectorAll('.full-section');
+    sections.forEach((section) => observer.observe(section));
+</script>
+
 </body>
 </html>
