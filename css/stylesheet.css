@@ -734,3 +734,16 @@ html {
     opacity: 1;
     transform: translateY(0);
 }
+
+.full-section.zoom-out {
+    opacity: 0.3;
+    transform: scale(0.8) translateY(-50px);
+    filter: blur(5px);
+    pointer-events: none;
+}
+
+.full-section.show {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    z-index: 10;
+}
