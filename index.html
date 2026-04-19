@@ -40,9 +40,13 @@
 <!--=============================================================================================================-->
 <!--                                            Hero Section                                                     -->
 <!--=============================================================================================================-->
-<main id="hero">
+<main id="hero" >
     <div class="content">
         <h1 class="welcome-universe">WELCOME TO MY UNIVERSE</h1>
+
+        <img src="assets/image-cloud/white-fluffy-clouds-black-wall_980774-11-removebg-preview.png"
+             alt="cloud image" class="floating-cloud">
+
         <p class="description">
             I'm <b>Viranga Sandaruwan</b>, a passionate student<br>
             crafting high-performance, user-centric digital experiences.
@@ -61,7 +65,7 @@
 <!--=============================================================================================================-->
 <!--                                             About Section                                                   -->
 <!--=============================================================================================================-->
-<section id="About">
+<section id="About" >
     <main class="container">
         <div class="about-content">
             <h1 class="section-title">I'M VIRANGA SANDARUWAN</h1>
@@ -342,24 +346,24 @@
 
 <!--==========-->
 <script>
-    const sections = document.querySelectorAll('.full-section');
+    const cloud = document.querySelector('.floating-cloud');
 
-    sections.forEach((section, index) => {
-        window.addEventListener('scroll', () => {
-            const rect = section.getBoundingClientRect();
-            if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
-                section.classList.add('show');
-                if (index > 0) {
-                    sections[index - 1].classList.add('zoom-out');
-                }
-            } else {
-                section.classList.remove('show');
-                if (index > 0) {
-                    sections[index - 1].classList.remove('zoom-out');
-                }
-            }
-        });
-    });
+    function startCloudAnimation() {
+        const randomTop = Math.floor(Math.random() * 60) + 5;
+
+        const randomDuration = Math.floor(Math.random() * 15) + 15;
+
+        cloud.style.top = randomTop + "%";
+        cloud.style.animation = `flyAcross ${randomDuration}s linear forwards`;
+
+        cloud.addEventListener('animationend', () => {
+            cloud.style.animation = 'none';
+
+            const randomDelay = Math.floor(Math.random() * 5000) + 2000;
+            setTimeout(startCloudAnimation, randomDelay);
+        }, { once: true });
+    }
+    startCloudAnimation();
 </script>
 
 </body>

@@ -629,16 +629,20 @@ h2:hover::after {
 /* Header */
 header {
     position: fixed;
-    top: 0;
-    width: 100%;
-    padding: 1.5rem 5%;
+    top: 0.5rem;
+    right: 0.5rem;
+    left: 0.5rem;
+    width: 99%;
+    padding: 1rem 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 100;
     background: rgba(0,0,0,0.9);
     backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255,0,0,0.1);
+    border-bottom: 1px solid rgba(255,0,0,0.5);
+    border-radius: 30px;
+    opacity: 87%;
 }
 
 .logo {
@@ -699,6 +703,25 @@ nav a:hover::after {
     border: 2px solid var(--red);
     color: var(--red);
     transform: scale(1.05);
+}
+
+
+
+@keyframes flyAcross {
+    0% {
+        left: -300px;
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.6;
+    }
+    90% {
+        opacity: 0.6;
+    }
+    100% {
+        left: 100vw;
+        opacity: 0;
+    }
 }
 
 
