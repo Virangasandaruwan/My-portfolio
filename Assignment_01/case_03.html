@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixed Position Layout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 300vh;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .fixed-borders {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+
+        .gray-circle {
+            position: relative; /* 01. Relative position */
+            width: 350px;
+            height: 350px;
+            background-color: #a38981;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .red-circle {
+            position: absolute;
+            width: 310px;
+            height: 310px;
+            background-color: #ff0000;
+            border-radius: 50%;
+        }
+
+        .content-container {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .scrolling-hello {
+            margin-top: 50vh;
+            transform: translateY(-50%);
+            width: 270px;
+            height: 270px;
+            background-color: #8e3271;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+
+<div class="fixed-borders">
+    <div class="gray-circle">
+        <div class="red-circle"></div>
+    </div>
+</div>
+
+<div class="content-container">
+    <div class="scrolling-hello">
+        Hello
+    </div>
+
+</div>
+
+</body>
+</html>
