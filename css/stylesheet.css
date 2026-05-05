@@ -695,180 +695,517 @@ body.light-mode #hero {
 /*====================================================================================================================*/
 
 
-/* Header */
+/*!* Header *!*/
+/*header {*/
+/*    position: fixed;*/
+/*    top: 0.5rem;*/
+/*    right: 0.5rem;*/
+/*    left: 0.5rem;*/
+/*    width: 99%;*/
+/*    padding: 1rem 5%;*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*    align-items: center;*/
+/*    z-index: 100;*/
+/*    background: rgba(0,0,0,0.9);*/
+/*    backdrop-filter: blur(12px);*/
+/*    border-bottom: 1px solid rgba(255,0,0,0.5);*/
+/*    border-radius: 30px;*/
+/*    opacity: 87%;*/
+/*}*/
+
+/*.logo {*/
+/*    font-size: 2.2rem;*/
+/*    font-weight: 800;*/
+/*    color: var(--red);*/
+/*    letter-spacing: 2px;*/
+/*    text-decoration: none;*/
+/*}*/
+
+/*nav {*/
+/*    display: flex;*/
+/*    gap: 2.5rem;*/
+/*}*/
+
+/*nav a {*/
+/*    color: var(--white);*/
+/*    text-decoration: none;*/
+/*    font-weight: 500;*/
+/*    transition: all 0.3s ease;*/
+/*    position: relative;*/
+/*}*/
+
+/*nav a:hover {*/
+/*    color: var(--red);*/
+/*    transform: translateY(-2px);*/
+/*}*/
+
+/*nav a::after {*/
+/*    content: '';*/
+/*    position: absolute;*/
+/*    width: 0;*/
+/*    height: 2px;*/
+/*    bottom: -5px;*/
+/*    left: 0;*/
+/*    background: var(--red);*/
+/*    transition: width 0.3s ease;*/
+/*}*/
+
+/*nav a:hover::after {*/
+/*    width: 100%;*/
+/*}*/
+
+/*.btn-contact {*/
+/*    background: var(--red);*/
+/*    color: white;*/
+/*    padding: 0.8rem 2rem;*/
+/*    border-radius: 50px;*/
+/*    border: none;*/
+/*    font-weight: 600;*/
+/*    cursor: pointer;*/
+/*    transition: all 0.4s ease;*/
+/*    text-decoration: none;*/
+/*}*/
+
+/*.btn-contact:hover {*/
+/*    background: transparent;*/
+/*    border: 2px solid var(--red);*/
+/*    color: var(--red);*/
+/*    transform: scale(1.05);*/
+/*}*/
+
+/*!* image  cloud *!*/
+/*.floating-cloud {*/
+/*    position: absolute;*/
+/*    width: 800px;*/
+/*    opacity: 0.6;*/
+/*    z-index: 1;*/
+/*    pointer-events: none;*/
+/*    filter: blur(2px);*/
+/*    top: 20%;*/
+/*    left: -650px;*/
+/*}*/
+
+/*@keyframes flyAcross {*/
+/*    0% {*/
+/*        left: -300px;*/
+/*        opacity: 0;*/
+/*    }*/
+/*    10% {*/
+/*        opacity: 0.6;*/
+/*    }*/
+/*    90% {*/
+/*        opacity: 0.6;*/
+/*    }*/
+/*    100% {*/
+/*        left: 100vw;*/
+/*        opacity: 0;*/
+/*    }*/
+/*}*/
+
+/*!* responsive *!*/
+/*!* Tablet (768px and below) *!*/
+/*@media (max-width: 768px) {*/
+/*    header {*/
+/*        top: 0.25rem;*/
+/*        right: 0.25rem;*/
+/*        left: 0.25rem;*/
+/*        padding: 0.75rem 3%;*/
+/*        border-radius: 20px;*/
+/*        gap: 0.5rem;*/
+/*    }*/
+
+/*    .nav-desktop {*/
+/*        display: none;*/
+/*    }*/
+
+/*    .hamburger {*/
+/*        display: flex;*/
+/*    }*/
+
+/*    .btn-contact {*/
+/*        padding: 0.6rem 1.5rem;*/
+/*        font-size: 0.85rem;*/
+/*    }*/
+
+/*    .theme-toggle {*/
+/*        font-size: 1.1rem;*/
+/*        padding: 0.4rem;*/
+/*    }*/
+/*}*/
+
+/*!* Mobile (480px and below) *!*/
+/*@media (max-width: 480px) {*/
+/*    header {*/
+/*        top: 0.2rem;*/
+/*        right: 0.2rem;*/
+/*        left: 0.2rem;*/
+/*        padding: 0.75rem 2%;*/
+/*        border-radius: 15px;*/
+/*        flex-wrap: wrap;*/
+/*    }*/
+
+/*    .logo {*/
+/*        font-size: 1.6rem;*/
+/*    }*/
+
+/*    .btn-contact {*/
+/*        padding: 0.5rem 1.2rem;*/
+/*        font-size: 0.8rem;*/
+/*        order: -1;*/
+/*    }*/
+
+/*    .theme-toggle {*/
+/*        order: 2;*/
+/*    }*/
+
+/*    .hamburger {*/
+/*        order: 3;*/
+/*    }*/
+
+/*    .nav-mobile {*/
+/*        width: 90%;*/
+/*        right: -90%;*/
+/*    }*/
+/*}*/
+
+
+/* ── HEADER BASE ───────────────────────────── */
 header {
     position: fixed;
     top: 0.5rem;
-    right: 0.5rem;
     left: 0.5rem;
-    width: 99%;
-    padding: 1rem 5%;
+    right: 0.5rem;
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;          /* mobile nav drop karaganna */
     align-items: center;
-    z-index: 100;
-    background: rgba(0,0,0,0.9);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255,0,0,0.5);
-    border-radius: 30px;
-    opacity: 87%;
+    gap: 1rem;
+    padding: 0.9rem 2.5rem;
+    background: rgba(0, 0, 0, 0.88);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 0, 0, 0.25);
+    border-radius: 50px;
+    z-index: 1000;
+    transition: all 0.3s ease;
 }
 
+/* ── LOGO ──────────────────────────────────── */
 .logo {
-    font-size: 2.2rem;
+    font-size: 2rem;
     font-weight: 800;
     color: var(--red);
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     text-decoration: none;
+    margin: 0;
+    transition: text-shadow 0.3s ease;
+}
+.logo:hover {
+    text-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
 }
 
-nav {
+/* ── DESKTOP NAV ───────────────────────────── */
+.nav-desktop {
     display: flex;
+    align-items: center;
     gap: 2.5rem;
+    margin: 0 auto;     /* center between logo and right controls */
 }
 
-nav a {
+.nav-desktop a {
     color: var(--white);
     text-decoration: none;
     font-weight: 500;
-    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    transition: color 0.3s ease, transform 0.3s ease;
     position: relative;
 }
 
-nav a:hover {
-    color: var(--red);
-    transform: translateY(-2px);
-}
-
-nav a::after {
+/* Underline animation on hover */
+.nav-desktop a::after {
     content: '';
     position: absolute;
     width: 0;
     height: 2px;
-    bottom: -5px;
+    bottom: -4px;
     left: 0;
     background: var(--red);
     transition: width 0.3s ease;
+    border-radius: 2px;
 }
-
-nav a:hover::after {
+.nav-desktop a:hover {
+    color: var(--red);
+    transform: translateY(-2px);
+}
+.nav-desktop a:hover::after {
     width: 100%;
 }
 
+/* ── RIGHT SIDE CONTROLS ───────────────────── */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-left: auto;
+}
+
+/* ── THEME TOGGLE ──────────────────────────── */
+.theme-toggle {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 0, 0, 0.2);
+    color: var(--red);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+.theme-toggle:hover {
+    background: rgba(255, 0, 0, 0.1);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+    transform: rotate(15deg);
+}
+
+/* ── CONTACT BUTTON ────────────────────────── */
 .btn-contact {
     background: var(--red);
     color: white;
-    padding: 0.8rem 2rem;
+    padding: 0.65rem 1.6rem;
     border-radius: 50px;
-    border: none;
+    border: 2px solid var(--red);
     font-weight: 600;
+    font-size: 0.9rem;
     cursor: pointer;
-    transition: all 0.4s ease;
-    text-decoration: none;
+    transition: all 0.35s ease;
+    white-space: nowrap;
 }
-
 .btn-contact:hover {
     background: transparent;
-    border: 2px solid var(--red);
     color: var(--red);
-    transform: scale(1.05);
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
 }
 
-/* image  cloud */
+/* ── HAMBURGER BUTTON ──────────────────────── */
+.hamburger {
+    display: none;          /* desktop වල hide */
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: 1px solid rgba(255, 0, 0, 0.3);
+    border-radius: 8px;
+    padding: 7px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    transition: border-color 0.3s ease;
+}
+.hamburger:hover {
+    border-color: var(--red);
+}
+
+/* 3 lines */
+.hamburger span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: var(--white);
+    border-radius: 2px;
+    transition: all 0.35s ease;
+}
+
+/* X animation when active */
+.hamburger.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+    background: var(--red);
+}
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+    background: var(--red);
+}
+
+/* ── MOBILE NAV ────────────────────────────── */
+.nav-mobile {
+    display: none;              /* default hide */
+    width: 100%;                /* full width of header */
+    flex-direction: column;
+    gap: 0;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+    border-top: 0px solid rgba(255, 0, 0, 0.15);
+}
+
+/* When open */
+.nav-mobile.active {
+    max-height: 400px;
+    padding-top: 1rem;
+    border-top-width: 1px;
+}
+
+.nav-mobile a {
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.75rem 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: color 0.3s ease, padding-left 0.3s ease;
+}
+.nav-mobile a:last-child {
+    border-bottom: none;
+}
+.nav-mobile a:hover {
+    color: var(--red);
+    padding-left: 0.75rem;
+}
+
+/* Contact link inside mobile nav — styled like button */
+.nav-mobile .nav-contact-link {
+    display: inline-block;
+    margin-top: 0.75rem;
+    margin-bottom: 0.5rem;
+    background: var(--red);
+    color: white !important;
+    padding: 0.65rem 1.5rem;
+    border-radius: 50px;
+    text-align: center;
+    font-weight: 600;
+    width: fit-content;
+}
+.nav-mobile .nav-contact-link:hover {
+    background: transparent;
+    border: 2px solid var(--red);
+    color: var(--red) !important;
+    padding-left: 1.5rem;
+}
+
+/* ── CLOUD (unchanged from yours) ─────────── */
 .floating-cloud {
     position: absolute;
-    width: 800px;
-    opacity: 0.6;
-    z-index: 1;
     pointer-events: none;
+    z-index: 1;
+    width: 700px;
+    opacity: 0;
     filter: blur(2px);
+    left: -750px;
     top: 20%;
-    left: -650px;
 }
+
+
+/*.floating-cloud {*/
+/*    position: absolute;*/
+/*    width: 800px;*/
+/*    opacity: 0.6;*/
+/*    z-index: 1;*/
+/*    pointer-events: none;*/
+/*    filter: blur(2px);*/
+/*    top: 20%;*/
+/*    left: -650px;*/
+/*}*/
 
 @keyframes flyAcross {
-    0% {
-        left: -300px;
-        opacity: 0;
-    }
-    10% {
-        opacity: 0.6;
-    }
-    90% {
-        opacity: 0.6;
-    }
-    100% {
-        left: 100vw;
-        opacity: 0;
-    }
+    0%   { left: -300px; opacity: 0; }
+    10%  { opacity: 0.6; }
+    90%  { opacity: 0.6; }
+    100% { left: 100vw;  opacity: 0; }
 }
 
-/* responsive */
-/* Tablet (768px and below) */
-@media (max-width: 768px) {
+/* =============================================
+   RESPONSIVE BREAKPOINTS
+============================================= */
+
+/* ── TABLET (max 900px) ────────────────────── */
+@media (max-width: 900px) {
+
     header {
-        top: 0.25rem;
-        right: 0.25rem;
-        left: 0.25rem;
-        padding: 0.75rem 3%;
-        border-radius: 20px;
-        gap: 0.5rem;
+        padding: 0.85rem 1.5rem;
+        border-radius: 30px;
+        gap: 0.75rem;
     }
 
+    /* Desktop nav hide */
     .nav-desktop {
         display: none;
     }
 
+    /* Hamburger show */
     .hamburger {
         display: flex;
     }
 
-    .btn-contact {
-        padding: 0.6rem 1.5rem;
-        font-size: 0.85rem;
-    }
-
-    .theme-toggle {
-        font-size: 1.1rem;
-        padding: 0.4rem;
-    }
-}
-
-/* Mobile (480px and below) */
-@media (max-width: 480px) {
-    header {
-        top: 0.2rem;
-        right: 0.2rem;
-        left: 0.2rem;
-        padding: 0.75rem 2%;
-        border-radius: 15px;
-        flex-wrap: wrap;
+    /* Mobile nav show when active */
+    .nav-mobile {
+        display: flex;
     }
 
     .logo {
-        font-size: 1.6rem;
-    }
-
-    .btn-contact {
-        padding: 0.5rem 1.2rem;
-        font-size: 0.8rem;
-        order: -1;
-    }
-
-    .theme-toggle {
-        order: 2;
-    }
-
-    .hamburger {
-        order: 3;
-    }
-
-    .nav-mobile {
-        width: 90%;
-        right: -90%;
+        font-size: 1.7rem;
     }
 }
 
+/* ── MOBILE (max 600px) ────────────────────── */
+@media (max-width: 600px) {
+
+    header {
+        top: 0.3rem;
+        left: 0.3rem;
+        right: 0.3rem;
+        padding: 0.75rem 1.2rem;
+        border-radius: 20px;
+        gap: 0.5rem;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+        letter-spacing: 2px;
+    }
+
+    /* Hide contact button on small screens
+       (contact link is inside mobile nav instead) */
+    .header-right > a {
+        display: none;
+    }
+
+    .btn-contact {
+        padding: 0.55rem 1.2rem;
+        font-size: 0.82rem;
+    }
+
+    .theme-toggle {
+        width: 36px;
+        height: 36px;
+        font-size: 0.9rem;
+    }
+
+    .hamburger {
+        width: 36px;
+        height: 36px;
+    }
+}
+
+/* ── VERY SMALL (max 380px) ────────────────── */
+@media (max-width: 380px) {
+
+    header {
+        padding: 0.65rem 1rem;
+    }
+
+    .logo {
+        font-size: 1.3rem;
+    }
+}
 
 /*====================================================================================================================*/
 /*                                               Animation scrolling                                                  */

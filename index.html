@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="css/galary.css">
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -20,9 +22,33 @@
 <!--=============================================================================================================-->
 <!--                                            Header                                                           -->
 <!--=============================================================================================================-->
+<!--<header>-->
+<!--    <a href="#hero"> <h1 class="logo">VIRANGA</h1></a>-->
+<!--    <nav>-->
+<!--        <a href="#About">About</a>-->
+<!--        <a href="#skills">Skills</a>-->
+<!--        <a href="#Experience">Experience</a>-->
+<!--        <a href="#Projects">Projects</a>-->
+<!--        <a href="#Gallery">Gallery</a>-->
+<!--    </nav>-->
+
+<!--    <button id="theme-icon" class="theme-toggle">-->
+<!--        <i class="fas fa-moon"></i>-->
+<!--    </button>-->
+
+<!--    <a href="contact.html">-->
+<!--        <button class="btn-contact">Contact</button>-->
+<!--    </a>-->
+<!--</header>-->
+<!-- -->
 <header>
-    <a href="#hero"> <h1 class="logo">VIRANGA</h1></a>
-    <nav>
+
+
+    <a href="#hero">
+        <h1 class="logo">VIRANGA</h1>
+    </a>
+
+    <nav class="nav-desktop">
         <a href="#About">About</a>
         <a href="#skills">Skills</a>
         <a href="#Experience">Experience</a>
@@ -30,16 +56,35 @@
         <a href="#Gallery">Gallery</a>
     </nav>
 
-    <button id="theme-icon" class="theme-toggle">
-        <i class="fas fa-moon"></i>
-    </button>
 
-    <a href="contact.html">
-        <button class="btn-contact">Contact</button>
-    </a>
+    <div class="header-right">
+
+        <button id="theme-icon" class="theme-toggle">
+            <i class="fas fa-moon"></i>
+        </button>
+
+        <a href="contact.html">
+            <button class="btn-contact">Contact</button>
+        </a>
+
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+    </div>
+
+    <nav class="nav-mobile" id="nav-mobile">
+        <a href="#About">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#Experience">Experience</a>
+        <a href="#Projects">Projects</a>
+        <a href="#Gallery">Gallery</a>
+        <a href="contact.html" class="nav-contact-link">Contact</a>
+    </nav>
+
 </header>
- 
-
 
 
 
@@ -71,9 +116,9 @@
 <!--=============================================================================================================-->
 <!--                                             About Section                                                   -->
 <!--=============================================================================================================-->
-<section id="About" >
+<section id="About">
     <main class="container">
-        <div class="about-content">
+        <div class="about-content" >
             <h1 class="section-title">I'M VIRANGA SANDARUWAN</h1>
             <p class="about-text">
                 Passionate Computer Science student with strong foundation in programming fundamentals,
@@ -96,7 +141,7 @@
 <!--=============================================================================================================-->
 <!--                                            Skills Section                                                   -->
 <!--=============================================================================================================-->
-<section id="skills">
+<section id="skills"  >
     <main class="container">
         <h2 class="section-title">SKILLS & TECHNOLOGIES</h2>
         <div class="skills-grid">
@@ -438,49 +483,39 @@
         }
     });
 
+//     responsive part
+    document.addEventListener('DOMContentLoaded', function () {
 
-//     mobileresonsive part
+        const hamburger  = document.getElementById('hamburger');
+        const navMobile  = document.getElementById('nav-mobile');
 
-    document.addEventListener('DOMContentLoaded', function() {
-        const hamburger = document.getElementById('hamburger');
-        const navMobile = document.getElementById('nav-mobile');
-        const overlay = document.createElement('div');
-        overlay.className = 'mobile-overlay';
-        document.body.appendChild(overlay);
-
-        hamburger.addEventListener('click', function() {
+        hamburger.addEventListener('click', function () {
             hamburger.classList.toggle('active');
             navMobile.classList.toggle('active');
-            overlay.classList.toggle('active');
         });
 
-        // Close menu when clicking overlay
-        overlay.addEventListener('click', function() {
-            hamburger.classList.remove('active');
-            navMobile.classList.remove('active');
-            overlay.classList.remove('active');
-        });
-
-        // Close menu when clicking nav links
-        document.querySelectorAll('.nav-mobile a').forEach(link => {
-            link.addEventListener('click', function() {
+        document.querySelectorAll('.nav-mobile a').forEach(function (link) {
+            link.addEventListener('click', function () {
                 hamburger.classList.remove('active');
                 navMobile.classList.remove('active');
-                overlay.classList.remove('active');
             });
         });
 
-        // Close menu on window resize (if desktop)
-        window.addEventListener('resize', function() {
-            if (window.innerWidth > 768) {
+        window.addEventListener('resize', function () {
+            if (window.innerWidth > 900) {
                 hamburger.classList.remove('active');
                 navMobile.classList.remove('active');
-                overlay.classList.remove('active');
             }
         });
-    });
 
+    });
+    
 </script>
 
+
+<script>
+    AOS.init();
+</script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </body>
 </html>
