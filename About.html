@@ -245,8 +245,33 @@
             <p>© 2026 Viranga Sandaruwan | All Rights Reserved</p>
         </div>
     </footer>
+</div>
+    <script>
+
+        // mouse event
+        const dot = document.querySelector(".cursor-dot");
+        const outline = document.querySelector(".cursor-outline");
+
+        window.addEventListener("mousemove", (e) => {
+            const posX = e.clientX;
+            const posY = e.clientY;
+
+            dot.style.left = `${posX}px`;
+            dot.style.top = `${posY}px`;
+
+            outline.animate({
+                left: `${posX}px`,
+                top: `${posY}px`
+            }, { duration: 500, fill: "forwards" });
+        });
+
+        document.querySelectorAll('a, button, .skill-card').forEach(link => {
+            link.addEventListener('mouseenter', () => outline.classList.add('cursor-active'));
+            link.addEventListener('mouseleave', () => outline.classList.remove('cursor-active'));
+        });
 
 
+    </script>
     </body>
     </html>
 

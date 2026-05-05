@@ -4,6 +4,8 @@
     --white: #fff;
     --gray: #888;
     --dark: #111;
+    --primary: #ff0000;
+    --glow-red: rgba(255, 0, 0, 0.5);
 }
 
 * {
